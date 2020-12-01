@@ -54,9 +54,9 @@ namespace planerApp
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "405545343922944",
+               appSecret: "97b656e23ad2f192c4762a418c4a6fd2");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
