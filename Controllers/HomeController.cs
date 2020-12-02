@@ -18,6 +18,19 @@ namespace planerApp.Controllers
                 return View(); 
             }
         }
+        [HttpGet]
+        public ActionResult Change()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public string Change(Notate notate)
+        {
+            db.Notates.Add(notate);
+            db.SaveChanges();
+            return ("Note" + notate.title + "was added");
+        }
 
         public ActionResult About()
         {
