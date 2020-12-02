@@ -7,7 +7,7 @@ namespace planerApp.Models
 {
     public class Notate
     {
-        public int id { get; set; }
+        [System.ComponentModel.DataAnnotations.Key] public int id { get; set; }
         public string title { get; set; }
         public string note { get; set; }
     }

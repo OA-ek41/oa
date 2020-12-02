@@ -9,7 +9,7 @@ namespace planerApp.Models
     public class Tassk
     {
 
-        [Key]  public int T_id { get; set; }
+        [Key] public int Id { get; set; }
         public string T_title { get; set; }
         public string T_desc { get; set; }
         public DateTime t_data { get; set; }
