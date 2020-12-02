@@ -13,6 +13,18 @@
     }
     <p><a href="/Home/Change/">Змінити</a></p>
 </div>
+<hr />
+<div class="row">
+    @foreach (var e in ViewBag.Events)
+    {
+        <div class="col-md-4">
+            <h3>@e.e_title</h3>.
+            <p>@e.e_date</p>
+        </div>
+
+    }
+    <p><a href="/Home/Change/">Змінити</a></p>
+</div>
 
 <!---<div class="row">
 <div class="jumbotron">
