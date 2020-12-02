@@ -13,6 +13,6 @@ namespace planerApp.Models
         public string T_title { get; set; }
         public string T_desc { get; set; }
         public bool T_check { get; set; }
-        public DateTime t_data { get; set; }
+        public DateTime T_data { get; set; }
     }
 }
