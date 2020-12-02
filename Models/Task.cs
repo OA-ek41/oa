@@ -5,7 +5,7 @@ using System.Web;
 
 namespace planerApp.Models
 {
-    public class Task
+    public class Tassk
     {
         public int T_id { get; set; }
         public string T_title { get; set; }
