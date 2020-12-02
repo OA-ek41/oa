@@ -7,8 +7,8 @@ namespace planerApp.Models
 {
     public class Media
     {
-        public int m_id { get; set; }
-        public string m_title { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
 
     }
 }
