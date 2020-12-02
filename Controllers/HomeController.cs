@@ -15,6 +15,8 @@ namespace planerApp.Controllers
             {
                 var notates = db.Notates;
                 ViewBag.Notates = notates;
+                var tassk = db.Tassks;
+                ViewBag.Tassks = tassk;
                 return View(); 
             }
         }
