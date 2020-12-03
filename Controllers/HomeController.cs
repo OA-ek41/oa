@@ -60,6 +60,44 @@ namespace planerApp.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult ChangeN(int id)
+        {
+            Notate n = db.Notates.Find(id);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            return View(n);
+        }
+        [HttpPost, ActionName("ChangeN")]
+        public ActionResult ChangeNConfirmed(int id, Notate notate)
+        {
+            Notate n = db.Notates.Find(id);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            db.Notates.Remove(n);
+            db.Notates.Add(notate);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult CreateE()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateE(Notate notate)
+        {
+            db.Notates.Add(notate);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

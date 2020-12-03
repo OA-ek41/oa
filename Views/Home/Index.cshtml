@@ -1,53 +1,63 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+<h2>Нотатки</h2>
+<h5><a href="/Home/Create/">Додати</a></h5>
 <div class="row">
-    <h2>Нотатки</h2>
-    <h5><a href="/Home/Create/">Додати</a></h5>
     @foreach (var n in ViewBag.Notates)
     {
         <div class="col-md-4">
-            <div class="card" >
+            <div class="card">
                 <div class="card-body">
                     <h3 class="card-title">@n.title</h3>
                     <p class="card-text">@n.note</p>
                     <hr />
-                    <a href="/Home/Delete/@n.id">Редагувати</a>
+                    <a href="/Home/ChangeN/@n.id">Редагувати</a>
                     <a href="/Home/Delete/@n.id">Видалити</a>
                 </div>
             </div>
-
         </div>
-
     }
 
 </div>
 <hr />
-<div class="row">
+<h2>Події</h2>
+<h5><a href="/Home/CreateE/">Додати</a></h5>
+<div class="row alert-light">
     @foreach (var e in ViewBag.Events)
     {
         <div class="col-md-4">
             <h3>@e.e_title</h3>.
             <p>@e.e_date</p>
+            <a href="/Home/ChangeN/@e.id">Керувати подією</a>
         </div>
-
     }
-    <p><a href="/Home/Change/">Змінити</a></p>
 </div>
 <hr />
+<h2>Завдання</h2>
+<h5><a href="/Home/Create/">Додати</a></h5>
 <div class="row">
     @foreach (var t in ViewBag.Tassks)
     {
-    <div class="col-md-4">
-        <h3>@t.T_title</h3>.
-        <p>@t.T_desc</p>
-        <p>@t.T_check</p>
-        <p>@t.T_data</p>
-    </div>
-
+        if (t.T_check == false)
+        {
+            <div class="col-md-4 alert-dark">
+                <h3>@t.T_title</h3>.
+                <p>@t.T_desc</p>
+                <p>@t.T_data</p>
+                <a href="/Home/ChangeN/@t.TaskId">Керувати завданням</a>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-4">
+                <h3>@t.T_title</h3>.
+                <p>@t.T_desc</p>
+                <p>@t.T_data</p>
+                <a href="/Home/ChangeN/@t.TaskId">Керувати завданням</a>
+            </div>
+        }              
     }
-    <p><a href="/Home/Change/">Змінити</a></p>
 </div>
 
 <!---<div class="row">

@@ -243,6 +243,8 @@
     <Content Include="Views\Home\politika_konfidencijnosti.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Home\ChangeN.cshtml" />
+    <Content Include="Views\Home\CreateE.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
