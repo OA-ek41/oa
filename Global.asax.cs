@@ -14,7 +14,7 @@ namespace planerApp
     {
         protected void Application_Start()
         {
-            //Database.SetInitializer(new NotateDbInitializer());
+            Database.SetInitializer(new NotateDbInitializer());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
