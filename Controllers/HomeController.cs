@@ -91,9 +91,9 @@ namespace planerApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateE(Notate notate)
+        public ActionResult CreateE(Event events)
         {
-            db.Notates.Add(notate);
+            db.Events.Add(events);
             db.SaveChanges();
 
             return RedirectToAction("Index");
