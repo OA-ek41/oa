@@ -1,0 +1,26 @@
+﻿@model planerApp.Models.Notate
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Видалити нотатку</h2>
+<dl>
+    <dt>Назва</dt>
+    <dd>
+        @Html.DisplayFor(model => model.title)
+    </dd>
+
+    <dt>Нотатка</dt>
+    <dd>
+        @Html.DisplayFor(model => model.note)
+    </dd>
+
+</dl>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Видалити /">
+    <h2>Delete</h2>
+}
+

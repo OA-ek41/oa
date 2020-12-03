@@ -3,15 +3,25 @@
 }
 
 <div class="row">
+    <h2>Нотатки</h2>
+    <h5><a href="/Home/Create/">Додати</a></h5>
     @foreach (var n in ViewBag.Notates)
     {
         <div class="col-md-4">
-            <h3>@n.title</h3>
-            <p>@n.note</p>
+            <div class="card" >
+                <div class="card-body">
+                    <h3 class="card-title">@n.title</h3>
+                    <p class="card-text">@n.note</p>
+                    <hr />
+                    <a href="/Home/Delete/@n.id">Редагувати</a>
+                    <a href="/Home/Delete/@n.id">Видалити</a>
+                </div>
+            </div>
+
         </div>
 
     }
-    <p><a href="/Home/Change/">Додати</a></p>
+
 </div>
 <hr />
 <div class="row">
@@ -33,7 +43,7 @@
         <h3>@t.T_title</h3>.
         <p>@t.T_desc</p>
         <p>@t.T_check</p>
-        <p>@t.t_data</p>
+        <p>@t.T_data</p>
     </div>
 
     }
@@ -67,4 +77,4 @@
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
     </div>
-</div>
+</div-->

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using planerApp.Models;
+using System.Data.Entity;
 
 namespace planerApp.Controllers
 {
@@ -19,23 +20,46 @@ namespace planerApp.Controllers
                 ViewBag.Tassks = tassks;
                 var events = db.Events;
                 ViewBag.Events = events;
-                return View(); 
+                return View(notates); 
             }
         }
         [HttpGet]
-        public ActionResult Change()
+        public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public string Change(Notate notate)
+        public ActionResult Create(Notate notate)
         {
             db.Notates.Add(notate);
             db.SaveChanges();
-            return ("Note" + notate.title + "was added");
+
+            return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            Notate n = db.Notates.Find(id);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            return View(n);
+        }
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Notate n = db.Notates.Find(id);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            db.Notates.Remove(n);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
