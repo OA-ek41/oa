@@ -68,6 +68,8 @@ namespace planerApp.Controllers
             {
                 return HttpNotFound();
             }
+            var notates = db.Notates;
+            ViewBag.Notates = notates;
             return View(n);
         }
         [HttpPost, ActionName("ChangeN")]
@@ -98,6 +100,122 @@ namespace planerApp.Controllers
 
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult DeleteE(int e_id)
+        {
+            Event n = db.Events.Find(e_id);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            return View(n);
+        }
+        [HttpPost, ActionName("DeleteE")]
+        public ActionResult DeleteEConfirmed(int e_id)
+        {
+            Event n = db.Events.Find(e_id);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            db.Events.Remove(n);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult ChangeE(int e_id)
+        {
+            Event n = db.Events.Find(e_id);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            var eventt = db.Events;
+            ViewBag.Events = eventt;
+            return View(n);
+        }
+        [HttpPost, ActionName("ChangeE")]
+        public ActionResult ChangeEConfirmed(int e_id, Event eventt)
+        {
+            Event n = db.Events.Find(e_id);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            db.Events.Remove(n);
+            db.Events.Add(eventt);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        
+         [HttpGet]
+        public ActionResult CreateT()
+        {
+            return View();
+        }
+        
+        [HttpPost]
+        public ActionResult CreateT(Tassk tassk)
+        {
+            tassk.T_check = false;
+            db.Tassks.Add(tassk);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        
+        [HttpGet]
+        public ActionResult DeleteT(int TaskId)
+        {
+            Tassk n = db.Tassks.Find(TaskId);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            return View(n);
+        }
+        
+        [HttpPost, ActionName("DeleteT")]
+        public ActionResult DeleteTConfirmed(int TaskId)
+        {
+            Tassk n = db.Tassks.Find(TaskId);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            db.Tassks.Remove(n);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        
+        [HttpGet]
+        public ActionResult ChangeT(int TaskId)
+        {
+            Tassk n = db.Tassks.Find(TaskId);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            var tassk = db.Tassks;
+            ViewBag.Events = tassk;
+            return View(n);
+        }
+        [HttpPost, ActionName("ChangeE")]
+        public ActionResult ChangeEConfirmed(int TaskId, Tassk tassk)
+        {
+            Tassk n = db.Tassks.Find(TaskId);
+            if (n == null)
+            {
+                return HttpNotFound();
+            }
+            db.Tassks.Remove(n);
+            db.Tassks.Add(tassk);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+         
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

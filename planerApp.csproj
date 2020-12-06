@@ -245,6 +245,11 @@
     <Content Include="Views\Home\Delete.cshtml" />
     <Content Include="Views\Home\ChangeN.cshtml" />
     <Content Include="Views\Home\CreateE.cshtml" />
+    <Content Include="Views\Home\ChangeE.cshtml" />
+    <Content Include="Views\Home\DeleteE.cshtml" />
+    <Content Include="Views\Home\CreateT.cshtml" />
+    <Content Include="Views\Home\DeleteT.cshtml" />
+    <Content Include="Views\Home\ChangeT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,35 @@
+﻿@model planerApp.Models.Tassk
+
+
+@{
+    ViewBag.Title = "ChangeT";
+}
+
+<h3 class="text-center">Змінити завдання</h3>
+<div class="card " style=" margin: 5%">
+    <div class="card-body" style=" margin: 1%">
+        <form method="post" style="width: 100%">
+            <div class="form-group align-content-center">
+                <h5>Назва</h5>
+                <p>@Html.DisplayFor(model => model.T_title)</p>
+                <input class="form-control" style="width:100%" type="text" name="T_title" />
+            </div>
+            <div class="form-group align-content-center">
+                <h5>Опис завдання</h5>
+                <p>@Html.DisplayFor(model => model.T_desc)</p>
+                <input class="form-control" style="width:100%" type="text" name="T_desc" />
+            </div>
+            <div class="form-group">
+                <h5>Дата виконання</h5>
+                <p>@Html.DisplayFor(model => model.T_data)</p>
+                <input class="form-control-lg w-100" type="date" name="T_data" />
+            </div>
+            <div class="form-group align-content-center">
+                <div class="col-2"><h5>Помітка про виконання</h5></div>
+                <div class="col-2"><input class="form-control" style="width:100%" type="checkbox" name="T_check" /></div>
+            </div>                
+            <input class="form-control" type="submit" value="Змінити" />
+        </form>
+    </div>
+</div>
+

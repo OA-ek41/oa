@@ -7,11 +7,12 @@
     @foreach (var n in ViewBag.Notates)
     {
         <div class="col-md-4">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-body">
-                    <h3 class="card-title">@n.title</h3>
+                    <h5 class="card-title">@n.title</h5>
                     <p class="card-text">@n.note</p>
-                    <hr />
+                </div>
+                <div class="card-footer text-muted">
                     <a href="/Home/ChangeN/@n.id">Редагувати</a>
                     <a href="/Home/Delete/@n.id">Видалити</a>
                 </div>
@@ -26,11 +27,18 @@
 <div class="row alert-light">
     @foreach (var e in ViewBag.Events)
     {
-        <div class="col-md-4">
-            <h3>@e.e_title</h3>.
-            <p>@e.e_date</p>
-            <a href="/Home/ChangeN/@e.e_id">Керувати подією</a>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">@e.e_title</h5>
+                <p class="card-text">@e.e_date</p>
+            </div>
+            <div class="card-footer text-muted">
+                <a href="/Home/ChangeE/@e.e_id">Редагувати</a>
+                <a href="/Home/DeleteE/@e.e_id">Видалити</a>
+            </div>
         </div>
+    </div>
     }
 </div>
 <hr />

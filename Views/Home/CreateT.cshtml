@@ -1,0 +1,27 @@
+﻿@model planerApp.Models.Tassk
+
+@{
+    ViewBag.Title = "CreateT";
+}
+
+<h3 class="text-center">Додати завдання</h3>
+<div class="card " style=" margin: 5%">
+    <div class="card-body" style=" margin: 1%">
+        <form method="post" style="width: 100%">
+            <div class="form-group align-content-center">
+                <h5>Назва</h5>
+                <input class="form-control" style="width:100%" type="text" name="T_title" />
+            </div>
+            <div class="form-group">
+                <h5>Опис завдання</h5>
+                <input class="form-control-lg w-100" type="text" name="T_desc" />
+            </div>
+            <div class="form-group">
+                <h5>Виконати до</h5>
+                <input class="form-control-lg w-100" type="date" name="T_data" />
+            </div>
+            <input class="form-control" type="submit" value="Додати" />
+        </form>
+    </div>
+</div>
+

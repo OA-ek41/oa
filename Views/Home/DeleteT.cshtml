@@ -1,20 +1,24 @@
-﻿@model planerApp.Models.Notate
+﻿@model planerApp.Models.Tassk
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "DeleteT";
 }
 
-<h3 class="text-center">Видалити нотатку</h3>
+<h3 class="text-center">Видалити подію</h3>
 <div class="card " style=" margin: 5%">
     <div class="card-body" style=" margin: 1%">
         <form method="post" style="width: 100%">
             <div class="form-group align-content-center">
                 <h5>Назва</h5>
-                <p>@Html.DisplayFor(model => model.title)</p>
+                <p>@Html.DisplayFor(model => model.T_title)</p>
             </div>
             <div class="form-group">
-                <h5>Текст</h5>
-                <p>@Html.DisplayFor(model => model.note)</p>
+                <h5>Опис завдання</h5>
+                <p>@Html.DisplayFor(model => model.T_desc)</p>
+            </div>
+            <div class="form-group">
+                <h5>Дата</h5>
+                <p>@Html.DisplayFor(model => model.T_data)</p>
             </div>
             <input class="form-control" type="submit" value="Видалити" />
         </form>
@@ -26,4 +30,5 @@
 {
     <input type="submit" value="Видалити">
 }
+
 

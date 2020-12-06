@@ -4,24 +4,19 @@
     ViewBag.Title = "Create";
 }
 
-
-
-<div>
-    <h2>Додати нотатку</h2>
-    <form method="post">
-        <table>
-            <tr>
-                <td>Назва</td>
-                <td><input type="text" name="title" /></td>
-            </tr>
-            <tr>
-                <td>Текст</td>
-                <td><input type="text" name="note" /></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Add"/></td>
-            </tr>
-        </table>
-    </form>
+<h3 class="text-center">Додати нотатку</h3>
+<div class="card " style=" margin: 5%">
+    <div class="card-body" style=" margin: 1%">
+        <form method="post" style="width: 100%">
+            <div class="form-group align-content-center">
+                <h5>Назва</h5>
+                <input class="form-control" style="width:100%" type="text" name="title"/>
+            </div>
+            <div class="form-group">
+                <h5>Текст нотатки</h5>
+                <input class="form-control-lg w-100" type="text" name="note" />
+            </div>
+            <input class="form-control" type="submit" value="Додати" />
+        </form>
+    </div>
 </div>
-
